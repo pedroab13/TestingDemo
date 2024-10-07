@@ -7,12 +7,12 @@ namespace MyLibrary
         {
             return number1 + number2;
         }
-        public bool isEven(int number)
+        public bool IsEven(int number)
         {
             return number % 2 == 0;
         }
 
-        public int isEven()
+        public int IsEven()
         {
             throw new NotImplementedException();
         }
@@ -20,6 +20,23 @@ namespace MyLibrary
         public double AddDecimal(double number1, double number2)
         {
             return number1 + number2;
+        }
+
+        public IList<int> GetEvenNumbers(int start, int end)
+        {
+            return Enumerable.Range(start, end)
+                .Where(IsEven)
+                .ToList();
+
+            //List<int> evenNumbers = new List<int>();    
+            //for (int i = start; i <= end; i++)
+            //{
+            //    if (i % 2 == 0)
+            //    {  
+            //        evenNumbers.Add(i); 
+            //    }
+            //}
+            //return evenNumbers;
         }
     }
 }
